@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cambrussi — Gestão Acadêmica</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="assets/logo.svg" />
+</head>
+<body class="theme-dark">
+  <header class="topbar">
+    <div class="brand">
+      <img src="assets/logo.svg" alt="Cambrussi" class="logo" width="32" height="32" />
+      <div class="brand-text">
+        <strong>Cambrussi</strong>
+        <span>Gestão Acadêmica</span>
+      </div>
+    </div>
+
+    <nav class="nav" id="main-nav">
+      <button data-view="dashboard" class="nav-btn" aria-current="page">Dashboard</button>
+      <button data-view="teachers"  class="nav-btn">Docentes</button>
+      <button data-view="offers"    class="nav-btn">Ofertas</button>
+      <button data-view="allocations" class="nav-btn">Alocações</button>
+      <button data-view="reports" class="nav-btn">Relatórios</button>
+      <button data-action="export-teacher-csv" class="nav-btn ghost">Exportar Docentes (CSV)</button>
+    </nav>
+
+    <div class="topbar-actions">
+      <button id="btn-theme" class="icon-btn" title="Alternar tema (claro/escuro)" aria-label="Alternar tema">
+        <span class="theme-sun" aria-hidden="true">☀️</span>
+        <span class="theme-moon" aria-hidden="true">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="app" class="container"></main>
+
+  <footer class="footer">
+    <small>v2.0 • Dados em memória • <button id="btn-seed" class="link">Repopular (seed)</button></small>
+  </footer>
+
+  <script src="js/db-browser.js"></script>
+  <script src="app.js"></script>
+
+
+  <!-- Toggle de tema (leve) -->
+  <script>
+    (function(){
+      const body = document.body;
+      const key = 'cambrussi_theme';
+      const stored = localStorage.getItem(key);
+      if(stored) body.classList.toggle('theme-dark', stored==='dark');
+      document.getElementById('btn-theme').onclick = ()=>{
+        body.classList.toggle('theme-dark');
+        localStorage.setItem(key, body.classList.contains('theme-dark') ? 'dark' : 'light');
+      };
+    })();
+  </script>
+</body>
+</html>

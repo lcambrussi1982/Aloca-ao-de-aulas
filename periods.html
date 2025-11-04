@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cambrussi — Períodos</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="periods">
+  <header class="topbar">
+    <h1>Cambrussi — Gestão Acadêmica</h1>
+    
+    <nav class="nav">
+      <a href="index.html">Dashboard</a>
+      <a href="periods.html">Períodos</a>
+      <a href="courses.html">Cursos</a>
+      <a href="components.html">Componentes</a>
+      <a href="teachers.html">Docentes</a>
+      <a href="offers.html">Ofertas</a>
+      <a href="teacher_loads.html">Cargas Docentes</a>
+      <a href="reports.html">Relatórios</a>
+      <a class="ghost" href="#" data-action="export-csv">Exportar (CSV)</a>
+    </nav>
+    
+  </header>
+  <main id="app" class="container"></main>
+  <footer class="footer">
+    <small>v2 • LocalStorage • <button id="btn-seed" class="link" onclick="DB.seed();location.reload()">Popular Exemplo</button></small>
+  </footer>
+  <script src="js/db-browser.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
